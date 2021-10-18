@@ -1,0 +1,56 @@
+		Area
+ Timeline --> features ---- dataset file format 
+
+
+		Gazipur
+
+2016 Jan to Jun --> same as Gazipur 2016 Jul to Dec but missing 'Cloudy' ---- PDF
+
+2016 Jul to Dec --> Max Temp, Min Temp, Rainfall, Evaporation, Relative Humidity(morning & afternoon), Sunshine, Cloudy, Solar Radiation ---- PDF
+
+2017 Jan to Jun --> same as Gazipur 2016 Jul to Dec ---- PDF
+
+2017 Jul to Dec --> same as Gazipur 2016 Jul to Dec ---- EXCEL
+
+2018 --> same as Gazipur 2016 Jul to Dec ---- PDF
+
+2019 --> same as Gazipur 2016 Jul to Dec ---- PDF
+
+2020 --> same as Gazipur 2016 Jul to Dec ---- PDF
+
+
+
+		Barisal
+
+2017 Jan to Jun --> same as Gazipur 2016 Jul to Dec ---- PDF
+
+2017 Jul to Dec --> same as Gazipur 2016 Jul to Dec ---- EXCEL
+
+2018 --> same as Gazipur 2016 Jul to Dec ---- PDF
+
+2019 --> same as Gazipur 2016 Jul to Dec ---- PDF
+
+2020 --> same as Gazipur 2016 Jul to Dec ---- PDF
+
+
+
+		Rangpur
+
+2017 Jul to Dec --> same as Gazipur 2016 Jul to Dec but has extra features: Observed Evaporation, Correct Evaporation, Dry Bulb(twice), Wght Bulb(twice) ---- Excel
+
+2018 --> same as Gazipur 2016 Jul to Dec ---- PDF
+
+2019 --> same as Gazipur 2016 Jul to Dec ---- PDF
+
+2020 --> same as Gazipur 2016 Jul to Dec ---- PDF
+
+
+
+		Habiganj
+
+2019 --> same as Gazipur 2016 Jul to Dec ---- PDF
+
+2020 --> same as Gazipur 2016 Jul to Dec but 'Evaporation' data missing completely, and July to December data for all other features except 'Solar Radiation' are missing ---- PDF
+
+
+

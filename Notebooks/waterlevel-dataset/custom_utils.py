@@ -1,6 +1,11 @@
 import pandas as pd
 import math
 
+def show_columnWise_maxMin(_df):
+    df = _df.copy()
+    for column in df.columns:
+        print(f'{column}: max={df[column].max()}, min={df[column].min()}\n')
+
 def get_avg_df(_df, num_avg_days=7, num_days_before=3):
     '''
     input STATION-WISE dataframe with all expected columns

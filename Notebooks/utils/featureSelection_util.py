@@ -49,7 +49,7 @@ def pearson_correlation_fs(_df, cls, threshold_corr=0.75):
                 cols_to_drop.add(col_to_drop)
     
     cols_to_drop = list(cols_to_drop)
-    df.drop(columns=cols_to_drop)
+    df.drop(columns=cols_to_drop, inplace=True)
     
     return df, cols_to_drop
 
@@ -97,7 +97,7 @@ def seleckKBest_fs(_df, cls, is_regression,
         elif col not in selected_cols:
             cols_to_drop.append(col)
             
-    df.drop(columns=cols_to_drop)
+    df.drop(columns=cols_to_drop, inplace=True)
     
     return df, cols_to_drop
 
@@ -147,7 +147,7 @@ def selectSequential_fs(_df, cls, is_regression,
         elif col not in selected_cols:
             cols_to_drop.append(col)
             
-    df.drop(columns=cols_to_drop)
+    df.drop(columns=cols_to_drop, inplace=True)
     
     return df, cols_to_drop
 

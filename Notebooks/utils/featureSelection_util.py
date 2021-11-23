@@ -35,23 +35,28 @@ def pearson_correlation_fs(_df, cls, threshold_corr=0.75):
     # find the features to drop
     for col1_idx in range(len(corr_matrix.columns)):
         for col2_idx in range(col1_idx):
-            if corr_matrix.columns[col1_idx] == cls or corr_matrix.columns[col2_idx] == cls:
+            col1 = corr_matrix.columns[col1_idx]
+            col2 = corr_matrix.columns[col2_idx]
+            
+            # do nothing if any column is the output class column
+            # or any of the columns is already dropped
+            if col1 == cls or col2 == cls or col1 in cols_to_drop or col2 in cols_to_drop:
                 continue
                 
             if abs(corr_matrix.iloc[col1_idx, col2_idx]) > threshold_corr:
                 if abs(corr_matrix.iloc[col1_idx, cls_col_idx]) < abs(corr_matrix.iloc[col2_idx, cls_col_idx]): 
-                    col_to_drop = corr_matrix.columns[col1_idx] 
+                    col_to_drop = col1 
                 else:
-                    col_to_drop = corr_matrix.columns[col2_idx]
+                    col_to_drop = col2
                 
-                print(f'dropping {col_to_drop} from ({corr_matrix.columns[col1_idx]}, {corr_matrix.columns[col2_idx]})')
+                print(f'dropping {col_to_drop} from ({col1}, {col2})')
                 
                 cols_to_drop.add(col_to_drop)
     
     cols_to_drop = list(cols_to_drop)
     df.drop(columns=cols_to_drop, inplace=True)
     
-    return df, cols_to_drop
+    return _df, cols_to_drop
 
 
 def seleckKBest_fs(_df, cls, is_regression,

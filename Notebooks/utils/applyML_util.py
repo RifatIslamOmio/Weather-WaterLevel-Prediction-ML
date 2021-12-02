@@ -1,10 +1,14 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.linear_model import LinearRegression, Ridge
-from sklearn.model_selection import KFold, cross_val_score, GridSearchCV
+from sklearn.model_selection import KFold, StratifiedKFold, cross_val_score, GridSearchCV
 from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
 from math import sqrt
+
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score
+from imblearn.over_sampling import SMOTE, RandomOverSampler
+from imblearn.under_sampling import RandomUnderSampler
+from collections import Counter
 
 # global random seed
 RAND_SEED = 42

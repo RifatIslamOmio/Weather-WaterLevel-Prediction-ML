@@ -211,9 +211,12 @@ def eval_classification(model, df, cls):
   y_test_pred = model.predict(X_test)
   test_accuracy = round(accuracy_score(y_test, y_test_pred), 4)
   test_f1 = round(f1_score(y_test, y_test_pred, average='macro'), 4)
-  # test_auc = round(roc_auc_score(y_test, y_test_pred), 4)
+  
+  y_test_proba = label_binarize(y_test, classes=[0, 1, 2])
+  y_test_pred_proba = label_binarize(y_test_pred, classes=[0, 1, 2])
+  test_auc = round(roc_auc_score(y_test_proba, y_test_pred_proba, multi_class='ovr'), 4)
 
-  return test_accuracy, test_f1
+  return test_accuracy, test_f1, test_auc
 
 
 def showEvalutationGraph_classification(ModelClass, df, cls, 
